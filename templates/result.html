@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Survival Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+            color: #343a40; /* Warna teks yang gelap untuk kontras */
+            padding: 20px; /* Memberikan padding pada body */
+        }
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px; /* Memberikan jarak di bawah container */
+        }
+        .result-card {
+            background: white; /* Latar belakang putih untuk card */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+            text-align: center; /* Memusatkan teks */
+        }
+        .badge {
+            font-size: 1.5rem; /* Ukuran font yang lebih besar */
+            padding: 10px 20px; /* Padding untuk badge */
+            border-radius: 5px; /* Sudut melengkung untuk badge */
+        }
+        .survived {
+            background-color: #28a745; /* Warna hijau untuk selamat */
+            color: white; /* Warna teks putih */
+        }
+        .not-survived {
+            background-color: #dc3545; /* Warna merah untuk tidak selamat */
+            color: white; /* Warna teks putih */
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #007bff; /* Warna judul yang menarik */
+            text-align: center; /* Memusatkan teks */
+            font-size: 2rem; /* Ukuran font yang lebih besar */
+            font-weight: bold; /* Menebalkan teks */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Warna tombol */
+            border-color: #007bff; /* Warna border tombol */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Warna tombol saat hover */
+            border-color: #004085; /* Warna border tombol saat hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Apakah Kamu Selamat atau Tidak?</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="result-card">
+                    <p class="lead"><strong>Prediction:</strong></p>
+                    <span class="badge {{ 'survived' if result['prediction'] == 'SELAMAT' else 'not-survived' }}">
+                        {{ result['prediction'] }}
+                    </span>
+                    <p class="mt-3"><strong>Message:</strong> {{ result['message'] }}</p>
+                    <div class="text-center">
+                        <a href="/" class="btn btn-primary">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

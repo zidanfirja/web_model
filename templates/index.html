@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+            color: #343a40; /* Warna teks yang gelap untuk kontras */
+            padding: 20px; /* Memberikan padding pada body */
+        }
+        .container {
+            background: white; /* Latar belakang putih untuk form */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+            margin-top: 50px;
+            margin-bottom: 50px; /* Memberikan jarak di bawah container */
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto untuk judul */
+            font-size: 2rem; /* Ukuran font yang lebih besar */
+            color: #007bff; /* Warna judul yang menarik */
+            text-align: center; /* Memusatkan teks */
+        }
+        .btn-success {
+            background-color: #28a745; /* Warna tombol */
+            border-color: #28a745; /* Warna border tombol */
+        }
+        .btn-success:hover {
+            background-color: #218838; /* Warna tombol saat hover */
+            border-color: #1e7e34; /* Warna border tombol saat hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <h1>Titanic Survival Prediction</h1>
+                <form action="/predict" method="post" class="mt-4">
+                    <div class="form-group">
+                        <label for="Sex">Sex:</label>
+                        <select class="form-control" id="Sex" name="Sex" required>
+                            <option value="0">Female</option>
+                            <option value="1">Male</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Age">Age:</label>
+                        <input type="number" class="form-control" id="Age" name="Age" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Passenger_Fare">Passenger Fare:</label>
+                        <input type="number" class="form-control" id="Passenger_Fare" name="Passenger_Fare" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Passenger_Class">Passenger Class:</label>
+                        <select class="form-control" id="Passenger_Class" name="Passenger_Class" required>
+                            <option value="1">First</option>
+                            <option value="2">Second</option>
+                            <option value="3">Third</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Port_of_Embarkation">Port of Embarkation:</label>
+                        <select class="form-control" id="Port_of_Embarkation" name="Port_of_Embarkation" required>
+                            <option value="1">Cherbourg</option>
+                            <option value="2">Queenstown</option>
+                            <option value="3">Southampton</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.
